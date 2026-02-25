@@ -40,7 +40,7 @@ public class salaEntity {
     private puntointeresEntity puntointeres;
 
     /// PIU
-    @OneToMany(mappedBy = "piu")
+    @OneToMany(mappedBy = "sala")
     private Set<piuEntity> pius = new HashSet<>();
 
 

@@ -23,7 +23,7 @@ public class unidadorganizacionalEntity {
 
 
     /// CONTENIDO
-    @OneToMany(mappedBy = "unidadManeja")
+    @OneToMany(mappedBy = "unidad_responsable")
     private List<contenidoEntity> contenidoManejado = new ArrayList<>();
 
 

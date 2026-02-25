@@ -23,12 +23,12 @@ public class piuEntity {
     private Date fecha_instalacion;
 
     /// INCIDENCIA PIU
-    @OneToMany(mappedBy = "incidenciapiu")
+    @OneToMany(mappedBy = "piu")
     private List<incidenciapiuEnitity> incidenciaspiu = new ArrayList<>();
 
 
     /// SOLICITUD DESCONEXION PIU
-    @OneToMany(mappedBy = "solicitudDesconexion")
+    @OneToMany(mappedBy = "piu")
     private List<solicituddesconexionpiuEntity> solidesconexion = new ArrayList<>();
 
     /// BITACORA ACCESO
@@ -38,8 +38,7 @@ public class piuEntity {
 
 
     /// RUTA
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ruta_id")
+    @OneToMany(mappedBy = "piu")
     private Set<rutaEntity> ruta = new HashSet<>();
 
     /// SALA

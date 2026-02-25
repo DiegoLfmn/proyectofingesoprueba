@@ -1,8 +1,5 @@
 package com.pruebafin.cl.Entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
@@ -12,6 +9,8 @@ import java.util.Set;
 @Entity
 @Table(name ="campus")
 public class campusEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_campus", length = 100)
     private Long id_campus;
 

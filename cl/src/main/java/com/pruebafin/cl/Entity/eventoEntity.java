@@ -10,10 +10,6 @@ import java.util.*;
 @Entity
 @Table(name = "evento")
 public class eventoEntity extends contenidoEntity {
-    @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
-    @Column(name = "id_evento", length = 100)
-    private Long id_evento;
 
     @Column(name = "fecha", length = 10)
     private Date fecha;
@@ -30,11 +26,9 @@ public class eventoEntity extends contenidoEntity {
     @Column(name = "organizador", length = 20)
     private String organizador;
 
-//    @Column(name = "sala", length = 10)
-    // ver como hacer para juntar ya que es un TIPO sala
 
     /// SALA
-    @OneToMany(mappedBy = "sala")
+    @OneToMany(mappedBy = "evento")
     private Set<salaEntity> salas =  new HashSet<>();
 
 

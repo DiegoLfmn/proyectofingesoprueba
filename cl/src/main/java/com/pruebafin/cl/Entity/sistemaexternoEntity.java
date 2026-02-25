@@ -27,6 +27,6 @@ public class sistemaexternoEntity {
     /// CONTENIDO
     /// 1 SISTEMA DIRECCIONA DE MUCHOS CONTENIDOS
 
-    @OneToMany(mappedBy = "sistemaOrigen")
+    @OneToMany(mappedBy = "sistemaExterno")
     private List<contenidoEntity> contenidoWSistema = new ArrayList<>();
 }

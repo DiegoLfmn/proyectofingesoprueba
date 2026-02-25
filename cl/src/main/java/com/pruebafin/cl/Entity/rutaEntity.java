@@ -21,8 +21,7 @@ public class rutaEntity {
     @Column(name = "tiempo_estimado", length = 10)
     private Float tiempo_estimado;
 
-//    @Column(name = "puntos", length = )
-//    private PuntoInteres puntos;
+
 
     /// PUNTO INTERES
     @ManyToMany(mappedBy = "puntointeresEntity")

@@ -12,7 +12,7 @@ public class contenidoEntity {
     @Id
     @GeneratedValue
     @Column(name = "id_contenido", length = 100)
-    private String id_contenido;
+    private Long id_contenido;
 
     @Column(name = "titulo",length = 20)
     private String titulo;
@@ -60,7 +60,7 @@ public class contenidoEntity {
     /// MUCHO A 1
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unidad_organizacional_id")
-    private unidadorganizacionalEntity unidadOrg_responsable;
+    private unidadorganizacionalEntity unidad_responsable;
 
     /// SISTEMA EXTERNO
 
