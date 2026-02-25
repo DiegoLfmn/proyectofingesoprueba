@@ -2,6 +2,9 @@ package com.pruebafin.cl.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name ="sala")
@@ -19,5 +22,26 @@ public class salaEntity {
 
     @Column(name = "capacidad_sala", length = 10)
     private Integer capacidad_sala;
+
+
+    /// EVENTO
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "evento_id")
+    private eventoEntity evento;
+
+
+    /// EDIFICIO
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "edificio_id")
+    private edificioEntity edificio;
+
+    /// PUNTOINTERES
+    @OneToOne(mappedBy = "sala")
+    private puntointeresEntity puntointeres;
+
+    /// PIU
+    @OneToMany(mappedBy = "piu")
+    private Set<piuEntity> pius = new HashSet<>();
+
 
 }

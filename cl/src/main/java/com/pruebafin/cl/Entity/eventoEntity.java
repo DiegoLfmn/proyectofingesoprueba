@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Time;
-import java.util.Date;
+import java.util.*;
 
 @Data
 @Entity
@@ -34,8 +34,8 @@ public class eventoEntity extends contenidoEntity {
     // ver como hacer para juntar ya que es un TIPO sala
 
     /// SALA
-    @ManyToOne
-    @JoinColumn(name = "sala_id")
-    private salaEntity sala;
+    @OneToMany(mappedBy = "sala")
+    private Set<salaEntity> salas =  new HashSet<>();
+
 
 }

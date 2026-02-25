@@ -3,7 +3,7 @@ package com.pruebafin.cl.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.util.*;
 
 @Data
 @Entity
@@ -22,8 +22,30 @@ public class piuEntity {
     @Column(name = "fecha_instalacion", length = 10)
     private Date fecha_instalacion;
 
+    /// INCIDENCIA PIU
+    @OneToMany(mappedBy = "incidenciapiu")
+    private List<incidenciapiuEnitity> incidenciaspiu = new ArrayList<>();
 
 
+    /// SOLICITUD DESCONEXION PIU
+    @OneToMany(mappedBy = "solicitudDesconexion")
+    private List<solicituddesconexionpiuEntity> solidesconexion = new ArrayList<>();
+
+    /// BITACORA ACCESO
+    @OneToOne(mappedBy = "piu")
+    private bitacoraAccesoEntity bitacora_acceso;
+
+
+
+    /// RUTA
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ruta_id")
+    private Set<rutaEntity> ruta = new HashSet<>();
+
+    /// SALA
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sala_id")
+    private salaEntity sala;
 
 
 

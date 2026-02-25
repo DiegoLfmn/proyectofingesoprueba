@@ -2,6 +2,10 @@ package com.pruebafin.cl.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name ="edificio")
@@ -18,4 +22,13 @@ public class edificioEntity {
     private String codigo_edificio;
 
 
+    /// SALA
+    @OneToMany(mappedBy = "edificio")
+    private Set<salaEntity> salas = new HashSet<>();
+
+
+    /// CAMPUS
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "campus_id")
+    private campusEntity campus;
 }

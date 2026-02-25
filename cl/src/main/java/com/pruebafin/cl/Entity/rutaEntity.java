@@ -3,6 +3,9 @@ package com.pruebafin.cl.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name ="ruta")
@@ -20,5 +23,19 @@ public class rutaEntity {
 
 //    @Column(name = "puntos", length = )
 //    private PuntoInteres puntos;
+
+    /// PUNTO INTERES
+    @ManyToMany(mappedBy = "puntointeresEntity")
+    private Set<puntointeresEntity> puntosdeinteres = new HashSet<>();
+
+    /// PIU
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "piu_id")
+    private piuEntity piu;
+
+    /// BITACORA
+    @OneToOne(mappedBy = "ruta")
+    private rutaEntity ruta;
+
 
 }
