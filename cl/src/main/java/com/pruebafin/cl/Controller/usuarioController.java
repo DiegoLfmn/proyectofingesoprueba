@@ -25,7 +25,7 @@ public class usuarioController {
         return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
     @GetMapping("/api/usuarios/{id}")
-    public ResponseEntity<usuarioEntity> obtenerPorId(@PathVariable String id){
+    public ResponseEntity<usuarioEntity> obtenerPorId(@PathVariable Long id){
         return usuService.obtenerUsuarioPorId(id)
                 .map(usuarioId -> new ResponseEntity<>(usuarioId,HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -38,7 +38,7 @@ public class usuarioController {
     }
 
     @PutMapping("/{id}") //PUT -> /api/usuarios/3
-    public ResponseEntity<usuarioEntity> actualizarUsuario(@PathVariable String id, @RequestBody usuarioEntity usuario){
+    public ResponseEntity<usuarioEntity> actualizarUsuario(@PathVariable Long id, @RequestBody usuarioEntity usuario){
         return usuService.obtenerUsuarioPorId(id)
                 .map(usuarioExiste -> {
                     usuario.setId_usuario(id);
@@ -49,7 +49,7 @@ public class usuarioController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> eliminarElUsuarioId(@PathVariable String id){
+    public ResponseEntity<Void> eliminarElUsuarioId(@PathVariable Long id){
         return usuService.obtenerUsuarioPorId(id)
                 .map(usuario -> {
                     usuService.eliminarUsuario(id);

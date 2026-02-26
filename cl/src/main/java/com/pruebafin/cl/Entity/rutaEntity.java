@@ -34,7 +34,7 @@ public class rutaEntity {
 
     /// BITACORA
     @OneToOne(mappedBy = "ruta")
-    private rutaEntity ruta;
+    private bitacoraAccesoEntity bitacoraAcceso;
 
 
 }

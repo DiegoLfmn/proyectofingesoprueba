@@ -26,18 +26,21 @@ public class usuarioService {
         return usuarioRepo.findAll();
     }
 
-    public Optional<usuarioEntity> obtenerUsuarioPorId(String id){
+    public Optional<usuarioEntity> obtenerUsuarioPorId(Long id){
+
         return usuarioRepo.findById(id);
     }
 
     public usuarioEntity actualizarUsuario(usuarioEntity usuario){
+
         return usuarioRepo.save(usuario);
     }
-    public void  eliminarUsuario(String id){
+    public void  eliminarUsuario(Long id){
         usuarioRepo.deleteById(id);
     }
 
     public List<usuarioEntity> obtenerPorCorreo(String correo){
+
         return usuarioRepo.findByCorreo(correo);
     }
 
