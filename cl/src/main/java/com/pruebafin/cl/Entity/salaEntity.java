@@ -36,11 +36,11 @@ public class salaEntity {
     private edificioEntity edificio;
 
     /// PUNTOINTERES
-    @OneToOne(mappedBy = "sala")
+    @OneToOne(mappedBy = "salaInteres")
     private puntointeresEntity puntointeres;
 
     /// PIU
-    @OneToMany(mappedBy = "sala")
+    @OneToMany(mappedBy = "salaConPiu")
     private Set<piuEntity> pius = new HashSet<>();
 
 

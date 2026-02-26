@@ -60,13 +60,13 @@ public class contenidoEntity {
     /// MUCHO A 1
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unidad_organizacional_id")
-    private unidadorganizacionalEntity unidad_responsable;
+    private unidadorganizacionalEntity unidadResponsable;
 
     /// SISTEMA EXTERNO
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sistema_externo_id")
-    private sistemaexternoEntity sistemaExterno;
+    private sistemaexternoEntity sistemaExternoC;
 
     /// EVENTO
 

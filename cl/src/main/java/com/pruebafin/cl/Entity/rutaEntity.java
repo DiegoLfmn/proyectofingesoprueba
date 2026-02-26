@@ -24,13 +24,13 @@ public class rutaEntity {
 
 
     /// PUNTO INTERES
-    @ManyToMany(mappedBy = "puntointeresEntity")
+    @ManyToMany(mappedBy = "rutaInteres")
     private Set<puntointeresEntity> puntosdeinteres = new HashSet<>();
 
     /// PIU
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "piu_id")
-    private piuEntity piu;
+    private piuEntity piuConRuta;
 
     /// BITACORA
     @OneToOne(mappedBy = "ruta")

@@ -23,28 +23,28 @@ public class piuEntity {
     private Date fecha_instalacion;
 
     /// INCIDENCIA PIU
-    @OneToMany(mappedBy = "piu")
+    @OneToMany(mappedBy = "piuIncidente")
     private List<incidenciapiuEnitity> incidenciaspiu = new ArrayList<>();
 
 
     /// SOLICITUD DESCONEXION PIU
-    @OneToMany(mappedBy = "piu")
+    @OneToMany(mappedBy = "piuDesconexion")
     private List<solicituddesconexionpiuEntity> solidesconexion = new ArrayList<>();
 
     /// BITACORA ACCESO
-    @OneToOne(mappedBy = "piu")
+    @OneToOne(mappedBy = "piuDeBita")
     private bitacoraAccesoEntity bitacora_acceso;
 
 
 
     /// RUTA
-    @OneToMany(mappedBy = "piu")
+    @OneToMany(mappedBy = "piuConRuta")
     private Set<rutaEntity> ruta = new HashSet<>();
 
     /// SALA
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sala_id")
-    private salaEntity sala;
+    private salaEntity salaConPiu;
 
 
 

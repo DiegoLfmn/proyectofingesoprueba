@@ -30,7 +30,7 @@ public class puntointeresEntity {
     /// SALA
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sala_id")
-    private salaEntity sala;
+    private salaEntity salaInteres;
 
 
     /// RUTA
@@ -40,13 +40,13 @@ public class puntointeresEntity {
             joinColumns = @JoinColumn(name = "puntointeres_id"),
             inverseJoinColumns = @JoinColumn(name = "ruta_id")
     )
-    private Set<rutaEntity> rutaEntity = new HashSet<>();
+    private Set<rutaEntity> rutaInteres = new HashSet<>();
 
 
     /// CAMPUS
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "campus_id")
-    private campusEntity campus;
+    private campusEntity campusInteres;
 
 
 }

@@ -31,7 +31,7 @@ public class solicituddesconexionpiuEntity {
     ///  MUCHOS A 1
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "piu_id")
-    private piuEntity piu;
+    private piuEntity piuDesconexion;
 
 
 

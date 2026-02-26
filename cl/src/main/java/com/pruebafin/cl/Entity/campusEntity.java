@@ -23,7 +23,7 @@ public class campusEntity {
     private Set<edificioEntity> edificios = new HashSet<>();
 
     /// PUNTO INTERES
-    @OneToMany(mappedBy = "campus")
+    @OneToMany(mappedBy = "campusInteres")
     private Set<puntointeresEntity> puntosEnCampus = new HashSet<>();
 
 }

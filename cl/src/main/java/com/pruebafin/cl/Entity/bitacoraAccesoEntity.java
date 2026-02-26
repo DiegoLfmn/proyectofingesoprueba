@@ -51,6 +51,6 @@ public class bitacoraAccesoEntity {
     /// PIU
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "piu_id")
-    private piuEntity piu;
+    private piuEntity piuDeBita;
 }
 

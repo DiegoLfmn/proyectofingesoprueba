@@ -31,7 +31,7 @@ public class incidenciapiuEnitity {
     ///  PIU
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "piu_id")
-    private piuEntity piu;
+    private piuEntity piuIncidente;
 
 
     ///  USUARIO
