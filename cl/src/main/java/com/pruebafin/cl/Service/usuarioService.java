@@ -16,8 +16,6 @@ public class usuarioService {
         this.usuarioRepo = usuarioRepo;
     }
 
-
-
     public usuarioEntity guardarUsuario(usuarioEntity usuario){
         return usuarioRepo.save(usuario);
     }

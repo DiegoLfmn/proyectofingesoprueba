@@ -10,7 +10,7 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "indicencia_piu")
-public class incidenciapiuEnitity {
+public class incidenciapiuEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_incidencia",length = 100)

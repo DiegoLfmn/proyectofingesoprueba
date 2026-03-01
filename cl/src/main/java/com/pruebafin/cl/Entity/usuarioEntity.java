@@ -60,6 +60,6 @@ public class usuarioEntity {
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "incidenciapiu_id")
     )
-    private List<incidenciapiuEnitity> incidenciasPiu = new ArrayList<>();
+    private List<incidenciapiuEntity> incidenciasPiu = new ArrayList<>();
 
 }

@@ -24,7 +24,7 @@ public class piuEntity {
 
     /// INCIDENCIA PIU
     @OneToMany(mappedBy = "piuIncidente")
-    private List<incidenciapiuEnitity> incidenciaspiu = new ArrayList<>();
+    private List<incidenciapiuEntity> incidenciaspiu = new ArrayList<>();
 
 
     /// SOLICITUD DESCONEXION PIU
