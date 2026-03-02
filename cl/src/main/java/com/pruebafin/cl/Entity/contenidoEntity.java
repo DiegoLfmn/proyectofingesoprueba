@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "contenido")
@@ -43,15 +47,22 @@ public class contenidoEntity {
     /// falta ver los id foraneos
 
 
-    ///  USUARIO
+    // Crea contenido
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "autor_id")
+    private usuarioEntity autor;
+
+    // consulta contenido
+    @ManyToMany(mappedBy = "contenido_consulta")
+    private Set<usuarioEntity> usuariosLeen = new HashSet<>();
 
 
     ///  BITACORA
     /// 1 contenido puede tener 1 bitacora de acceso
     /// 1 bitacora tiene 1 contenido
 
-    @OneToOne(mappedBy = "contenido")
-    private bitacoraAccesoEntity registroBitacora  ;
+    @OneToMany(mappedBy = "contenido")
+    private List<bitacoraAccesoEntity> registroBitacora  ;
 
     ///  verificar que este bien hecho, no entiendo bien como funciona este apartado
 

@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface contenidoRepository extends JpaRepository<contenidoEntity, Long> {
-    List<contenidoRepository> findByNombre(String nombre);
+    List<contenidoEntity> findByTitulo(String titulo);
 }

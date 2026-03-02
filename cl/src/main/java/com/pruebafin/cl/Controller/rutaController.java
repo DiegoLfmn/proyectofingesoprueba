@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/rutas")
-@RequestMapping
+@RestController
+@RequestMapping("/api/rutas")
+@CrossOrigin(origins = "*")
 public class rutaController {
     private rutaService rutaSrvc;
 

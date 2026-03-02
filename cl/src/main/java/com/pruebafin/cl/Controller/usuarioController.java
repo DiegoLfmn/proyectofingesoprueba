@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/usuarios")
-@RequestMapping
+@RestController
+@RequestMapping("/api/usuarios")
+@CrossOrigin(origins = "*")
 
 public class usuarioController {
     private usuarioService usuService;
@@ -24,7 +25,7 @@ public class usuarioController {
         List<usuarioEntity> usuarios = usuService.obtenerAllUsers();
         return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
-    @GetMapping("/api/usuarios/{id}")
+    @GetMapping("/api/usuario/{id}")
     public ResponseEntity<usuarioEntity> obtenerPorId(@PathVariable Long id){
         return usuService.obtenerUsuarioPorId(id)
                 .map(usuarioId -> new ResponseEntity<>(usuarioId,HttpStatus.OK))

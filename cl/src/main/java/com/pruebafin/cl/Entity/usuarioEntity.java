@@ -32,7 +32,17 @@ public class usuarioEntity {
     /// 1 usuario puede gestionar crear consultar N contenidos
     /// 1 contenido puede ser gestionado o creado por 1 usuario
     /// 1 contenido puede ser consultado por M usuario
-
+    // CREADOR
+    @OneToMany(mappedBy = "autor")
+    private List<contenidoEntity> contenidos = new ArrayList<>();
+    // LECTOR
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "usuario_contenido_consulta",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "contenido_id")
+    )
+    private Set<contenidoEntity> contenido_consulta = new HashSet<>();
     /// 1 usuario puede tener 1 rol
     /// 1 rol es usado por N usuarios
 
@@ -47,9 +57,13 @@ public class usuarioEntity {
 
     /// 1 usuario puede usar 1 bitacora
     /// 1 bitacora es usado por 1 usuario
-    ///
-    /// no hace aca para evitar bucles infiinitos buscando una bitacora, ya que estas
-    /// por ejemplopuede tener 10000 y buscarlas todas hasta tener una, mejor hacer un repository donde encuentre por id
+
+    @OneToMany(mappedBy = "usuario")
+    private List<bitacoraAccesoEntity> bitacora = new ArrayList<>();
+
+
+
+
 
     /// 1 usuario puede tener N incidencias
     /// 1 incidencia puede ser solicitada por M usuarios

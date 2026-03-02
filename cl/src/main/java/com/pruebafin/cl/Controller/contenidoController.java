@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/")
-@RequestMapping
+@RestController
+@RequestMapping("/api/contenidos")
+@CrossOrigin(origins = "*")
 public class contenidoController {
     private contenidoService contService;
 
@@ -25,7 +26,7 @@ public class contenidoController {
         return new ResponseEntity<>(contenidos, HttpStatus.OK);
     }
 
-    @PostMapping("/api/usuarios/{id}")
+    @PostMapping("/api/contenidos/{id}")
     public ResponseEntity<contenidoEntity> obtenerPorId(@PathVariable Long id){
         return contService.obtenerContenidoById(id)
                 .map(contenidoId -> new ResponseEntity<>(contenidoId,HttpStatus.OK))

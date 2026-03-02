@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -33,8 +34,8 @@ public class rutaEntity {
     private piuEntity piuConRuta;
 
     /// BITACORA
-    @OneToOne(mappedBy = "ruta")
-    private bitacoraAccesoEntity bitacoraAcceso;
+    @OneToMany(mappedBy = "ruta")
+    private List<bitacoraAccesoEntity> bitacora;
 
 
 }

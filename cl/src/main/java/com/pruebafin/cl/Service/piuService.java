@@ -43,6 +43,6 @@ public class piuService {
 
     //si se agregoi algo al repository
     public List<piuEntity> encontrarByFechaInstalacion(Date fecha) {
-        return piuRepo.findByFechaInstalacion(fecha);
+        return piuRepo.findByFecha_instalacion(fecha);
     }
 }

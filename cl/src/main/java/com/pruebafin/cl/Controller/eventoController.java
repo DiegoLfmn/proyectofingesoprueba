@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/eventos")
-@RequestMapping
+@RestController
+@RequestMapping("/api/eventos")
+@CrossOrigin(origins = "*")
 public class eventoController {
     private eventoService eveService;
 

@@ -32,8 +32,8 @@ public class piuEntity {
     private List<solicituddesconexionpiuEntity> solidesconexion = new ArrayList<>();
 
     /// BITACORA ACCESO
-    @OneToOne(mappedBy = "piuDeBita")
-    private bitacoraAccesoEntity bitacora_acceso;
+    @OneToMany(mappedBy = "piuDeBita")
+    private List<bitacoraAccesoEntity> bitacora_acceso;
 
 
 

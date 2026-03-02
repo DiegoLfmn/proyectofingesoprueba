@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/pius")
-@RequestMapping
+@RestController
+@RequestMapping("/api/pius")
+@CrossOrigin(origins = "*")
 public class piuController {
     private piuService piuSrvc;
 
