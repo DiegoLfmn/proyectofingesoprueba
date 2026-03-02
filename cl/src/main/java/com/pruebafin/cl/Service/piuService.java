@@ -3,11 +3,12 @@ package com.pruebafin.cl.Service;
 import com.pruebafin.cl.Entity.piuEntity;
 import com.pruebafin.cl.Repository.piuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class piuService {
     private piuRepository piuRepo;
 
@@ -36,9 +37,10 @@ public class piuService {
     }
 
     ///  eliminar
-    public void  borrarPiu(Long id) {
+    public void  eliminarPiu(Long id) {
         piuRepo.deleteById(id);
     }
+
     //si se agregoi algo al repository
     public List<piuEntity> encontrarByFechaInstalacion(Date fecha) {
         return piuRepo.findByFechaInstalacion(fecha);

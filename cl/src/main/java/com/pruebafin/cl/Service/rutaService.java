@@ -14,7 +14,7 @@ public class rutaService {
 
     @Autowired
     public rutaService(rutaRepository rutaRepo) {
-        rutaRepo = rutaRepo;
+        this.rutaRepo = rutaRepo;
     }
     /// guardar + nombre
     public rutaEntity guardarRuta(rutaEntity ruta){
